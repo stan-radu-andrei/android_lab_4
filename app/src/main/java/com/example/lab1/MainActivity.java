@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,6 +14,10 @@ import android.widget.TextView;
 import android.content.Intent;
 
 import org.w3c.dom.Text;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TEXT_VIEW_KEY = "hello";
@@ -99,6 +104,12 @@ public class MainActivity extends AppCompatActivity {
             case R.id.about_menu:
                 showContact();
                 return true;
+            case R.id.main_menu_settings:
+                showSettings();
+                return true;
+            case R.id.main_menu_save:
+                saveInternalStorage();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -129,5 +140,24 @@ public class MainActivity extends AppCompatActivity {
     protected void showContact() {
         Intent intent = new Intent(this, ContactMenu.class);
         startActivity(intent);
+    }
+
+    protected void showSettings() {
+        Intent intent = new Intent(this, Settings.class);
+        startActivity(intent);
+    }
+
+    protected void saveInternalStorage() {
+        String filename = "app_save";
+        String fileContents = "Lab 5";
+        try {
+            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename);
+            FileOutputStream fos = new FileOutputStream(file);
+            fos.write(fileContents.getBytes());
+            fos.flush();
+            fos.close();
+        } catch (IOException e) {
+
+        }
     }
 }

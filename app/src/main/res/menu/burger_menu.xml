@@ -11,4 +11,10 @@
     <item android:id="@+id/about_menu"
         android:title="About">
     </item>
+
+    <item android:id="@+id/main_menu_settings"
+        android:title="Settings" />
+
+    <item android:id="@+id/main_menu_save"
+        android:title="Menu Save" />
 </menu>
