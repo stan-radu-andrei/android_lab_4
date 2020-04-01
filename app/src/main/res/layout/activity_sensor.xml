@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:orientation="vertical"
+    tools:context=".SensorActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Sensors"/>
+
+    <ListView
+        android:id="@+id/list_view_sensors"
+        android:layout_width="515dp"
+        android:layout_height="54dp"
+        android:layout_weight="3"></ListView>
+
+    <TextView
+        android:id="@+id/geolocation_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:labelFor="@id/geolocation"
+        android:text="Coordinates"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/geolocation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textColor="#000000"
+        android:layout_marginTop="20dp"
+        android:text="" />
+
+</LinearLayout>

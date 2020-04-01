@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.hardware.Sensor;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -110,6 +111,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.main_menu_save:
                 saveInternalStorage();
                 return true;
+            case R.id.main_menu_sensors:
+                showSensors();
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -159,5 +162,9 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
 
         }
+    }
+    protected void showSensors() {
+        Intent intent = new Intent(this, SensorActivity.class);
+        startActivity(intent);
     }
 }
