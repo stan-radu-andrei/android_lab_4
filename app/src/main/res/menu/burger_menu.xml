@@ -19,4 +19,6 @@
         android:title="Menu Save" />
     <item android:id="@+id/main_menu_sensors"
         android:title="Sensor" />
+    <item android:id="@+id/main_menu_camera"
+        android:title="Camera" />
 </menu>
